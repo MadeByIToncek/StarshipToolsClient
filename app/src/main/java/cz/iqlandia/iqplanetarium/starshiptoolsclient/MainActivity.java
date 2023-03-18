@@ -1,6 +1,7 @@
 package cz.iqlandia.iqplanetarium.starshiptoolsclient;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
@@ -11,13 +12,22 @@ import androidx.navigation.ui.NavigationUI;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import cz.iqlandia.iqplanetarium.starshiptoolsclient.databinding.ActivityMainBinding;
+import cz.iqlandia.iqplanetarium.starshiptoolsclient.network.NetworkAdapter;
 
 public class MainActivity extends AppCompatActivity {
 
 	private ActivityMainBinding binding;
+	public static NetworkAdapter adapter;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+
+		adapter = new NetworkAdapter("http://192.168.99.64:8765") {
+			@Override
+			public void onError(String error) {
+				Toast.makeText(MainActivity.this, error, Toast.LENGTH_SHORT).show();
+			}
+		};
 		super.onCreate(savedInstanceState);
 
 		binding = ActivityMainBinding.inflate(getLayoutInflater());
@@ -33,5 +43,6 @@ public class MainActivity extends AppCompatActivity {
 		NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
 		NavigationUI.setupWithNavController(binding.navView, navController);
 	}
-	
+
+
 }

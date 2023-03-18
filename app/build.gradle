@@ -4,12 +4,12 @@ plugins {
 
 android {
     namespace 'cz.iqlandia.iqplanetarium.starshiptoolsclient'
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "cz.iqlandia.iqplanetarium.starshiptoolsclient"
         minSdk 22
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -23,8 +23,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
     buildFeatures {
         viewBinding true
@@ -32,7 +32,7 @@ android {
 }
 
 dependencies {
-
+    implementation 'com.squareup.okhttp3:okhttp:5.0.0-alpha.11'
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'com.google.android.material:material:1.5.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
