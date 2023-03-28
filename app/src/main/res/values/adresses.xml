@@ -10,7 +10,8 @@
   -->
 
 <resources>
-    <string name="base">http://192.168.99.64:8765</string>
     <string name="script">http://192.168.99.64:8765/script.html</string>
     <string name="linfo">http://192.168.99.64:8765/linfo.html</string>
+    <string name="questions">http://192.168.99.64:8765/questions.json</string>
+    <string name="submit">http://192.168.99.64:8765/submit/</string>
 </resources>

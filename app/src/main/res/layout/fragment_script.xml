@@ -15,7 +15,7 @@
     android:id="@+id/web"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.script.ScriptFragment">
+    tools:context=".script.ScriptFragment">
 
     <WebView
         android:id="@+id/webview"

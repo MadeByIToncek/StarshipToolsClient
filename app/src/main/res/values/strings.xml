@@ -12,7 +12,9 @@
 <resources>
     <string name="app_name">StarshipToolsClient</string>
     <string name="title_activity_main">StarshipToolsClient</string>
-    <string name="title_home">Broadcast Info</string>
+    <string name="title_home">Questions</string>
     <string name="title_dashboard">Script</string>
     <string name="title_notifications">Launch info</string>
+    <string name="author" />
+    <string name="question" />
 </resources>

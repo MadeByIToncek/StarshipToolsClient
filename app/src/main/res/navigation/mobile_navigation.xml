@@ -17,19 +17,19 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="cz.iqlandia.iqplanetarium.starshiptoolsclient.ui.home.HomeFragment"
+        android:name="cz.iqlandia.iqplanetarium.starshiptoolsclient.questions.QuestionsFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_questions" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="cz.iqlandia.iqplanetarium.starshiptoolsclient.ui.script.ScriptFragment"
+        android:name="cz.iqlandia.iqplanetarium.starshiptoolsclient.script.ScriptFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_script" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="cz.iqlandia.iqplanetarium.starshiptoolsclient.ui.linfo.LaunchInfoFragment"
+        android:name="cz.iqlandia.iqplanetarium.starshiptoolsclient.linfo.LaunchInfoFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_linfo" />
 </navigation>

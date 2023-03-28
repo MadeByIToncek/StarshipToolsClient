@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2023 - IToncek
+  ~
+  ~ All rights to modifying this source code are granted, except for changing licence.
+  ~ Any and all products generated from this source code must be shared with a link
+  ~ to the original creator with clear and well-defined mention of the original creator.
+  ~ This applies to any lower level copies, that are doing approximately the same thing.
+  ~ If you are not sure, if your usage is within these boundaries, please contact the
+  ~ author on their public email address.
+  -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="10dp"
+    android:paddingEnd="10dp"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CLEAR" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/idRV"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+</RelativeLayout>

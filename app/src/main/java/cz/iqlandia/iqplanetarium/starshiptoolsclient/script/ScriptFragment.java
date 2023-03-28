@@ -9,7 +9,7 @@
  * author on their public email address.
  */
 
-package cz.iqlandia.iqplanetarium.starshiptoolsclient.ui.script;
+package cz.iqlandia.iqplanetarium.starshiptoolsclient.script;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
