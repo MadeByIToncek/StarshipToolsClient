@@ -14,19 +14,31 @@ package cz.iqlandia.iqplanetarium.starshiptoolsclient;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Scanner;
+import java.util.concurrent.atomic.AtomicReference;
 
 public class NetworkAdapter {
 
     public static String get(String address) {
-        try (Scanner sc = new Scanner(new URL(address).openStream())) {
-            StringBuilder sb = new StringBuilder();
-            while (sc.hasNext()) {
-                sb.append(sc.next());
+        AtomicReference<String> s = new AtomicReference<>("");
+        Thread t = new Thread(() -> {
+            try (Scanner sc = new Scanner(new URL(address).openStream())) {
+                StringBuilder sb = new StringBuilder();
+                while (sc.hasNextLine()) {
+                    sb.append(sc.nextLine()).append("\n");
+                }
+                s.set(sb.toString());
+            } catch (IOException e) {
+                System.out.println(e.getLocalizedMessage());
+                e.printStackTrace();
+                s.set("[]");
             }
-            return sb.toString();
-        } catch (IOException e) {
-            e.printStackTrace();
-            return "{}";
+        });
+        t.start();
+        try {
+            t.join();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
         }
+        return s.get();
     }
 }

@@ -30,10 +30,12 @@ import cz.iqlandia.iqplanetarium.starshiptoolsclient.R;
 public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.ViewHolder> {
 
     private final ArrayList<QuestionModel> QuestionModelArrayList;
+    private final Context context;
 
     // Constructor
     public QuestionAdapter(Context context, ArrayList<QuestionModel> QuestionModelArrayList) {
         this.QuestionModelArrayList = QuestionModelArrayList;
+        this.context = context;
     }
 
     @NonNull
@@ -54,7 +56,7 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.ViewHo
     }
 
     private void submit(int id) {
-        NetworkAdapter.get("http://192.168.99.64:8765/questions.json" + id);
+        NetworkAdapter.get("http://192.168.99.64:8765/submit/" + id);
     }
 
     @Override

@@ -46,8 +46,10 @@ public class QuestionsFragment extends Fragment {
 
 //             Here, we have created new array list and added data to it
             JSONArray array = new JSONArray(NetworkAdapter.get(getResources().getString(R.string.questions)));
+            Toast.makeText(this.getContext(), "Requested", Toast.LENGTH_SHORT).show();
             ArrayList<QuestionModel> courseModelArrayList = new ArrayList<>();
             for (int i = 0; i < array.length() - 1; i++) {
+//                Toast.makeText(this.getContext(), "Building " + i, Toast.LENGTH_SHORT).show();
                 JSONObject obj = array.getJSONObject(i);
                 courseModelArrayList.add(new QuestionModel(obj.getString("a"), obj.getString("q"), obj.getInt("id")));
             }
@@ -63,15 +65,14 @@ public class QuestionsFragment extends Fragment {
             courseRV.setAdapter(courseAdapter);
 
         } catch (Exception e) {
-            Toast.makeText(this.getContext(), e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
             e.printStackTrace();
+            Toast.makeText(this.getContext(), e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
         }
         return root;
     }
 
     @Override
     public void onDestroyView() {
-        Toast.makeText(this.getContext(), "Closing", Toast.LENGTH_SHORT).show();
         super.onDestroyView();
         binding = null;
     }
